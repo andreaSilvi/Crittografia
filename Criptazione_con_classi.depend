@@ -1,0 +1,12 @@
+# depslib dependency file v1.0
+1417344855 source:/home/knoppix/Sistemi/Criptazione/Cripta.cpp
+	"Cripta.h"
+
+1417345613 /home/knoppix/Sistemi/Criptazione/Cripta.h
+	<string>
+	<iostream>
+
+1417345582 source:/home/knoppix/Sistemi/Criptazione/main.cpp
+	<iostream>
+	"Cripta.h"
+
