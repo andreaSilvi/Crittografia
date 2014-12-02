@@ -14,5 +14,8 @@ int main()
     cout<<"inserisci il testo: ";
     cin>>n;
     c.setTesto(n);
-    cout<<"testo criptato: "<<c.testoCriptato();
+    string s=c.testoCriptato();
+    cout<<"testo criptato: "<<s<<endl;
+    c.setTesto(s);
+    cout<<"testo decriptato: "<<c.testoDecriptato();
 }

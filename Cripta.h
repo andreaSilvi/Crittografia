@@ -31,6 +31,57 @@ class Cripta
 
         void setTesto(string t){testo=t;}
 
+        string testoDecriptato()
+        {
+            char c[in.length()];
+            int ordine[in.length()];
+
+            //caricare la chiave su un vettore
+            for(int i=0;i<in.length();i++)
+            {
+                c[i]=in[i];
+            }
+
+            getOrdine(c,&ordine[0],in.length());
+
+            int righe,colonne;
+
+            //definizione dimensione matrice
+            colonne=in.length();
+
+            righe=testo.length()/in.length();
+            if(testo.length()%in.length()!=0)
+                righe++;
+
+            char matrice[righe][colonne];
+            int postesto=0;
+
+            //caricamento testo su matrice
+            for(int i=0;i<colonne;i++)
+            {
+                for(int j=0;j<righe;j++)
+                {
+                    matrice[j][ordine[i]]=testo[postesto];
+                    postesto++;
+                }
+            }
+
+            cout<<endl<<endl;
+
+            string tDecriptato="";
+
+            //lettura matrice in base alla posizione sul vettore prima ordinato
+            for(int i=0;i<righe;i++)
+            {
+                for(int j=0;j<colonne;j++)
+                {
+                    tDecriptato+=matrice[i][j];
+                }
+            }
+
+            return tDecriptato;
+        }
+
         string testoCriptato()
         {
             char c[in.length()];
@@ -77,7 +128,7 @@ class Cripta
                 {
                     tCriptato+=matrice[j][ordine[i]];
                 }
-                tCriptato+=" ";
+                //tCriptato+=" ";
             }
 
             return tCriptato;
